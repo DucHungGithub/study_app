@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import '../../models/question_paper_model.dart';
+
 class DataUploader extends GetxController{
   @override
   void onReady(){
@@ -16,10 +18,12 @@ class DataUploader extends GetxController{
     final Map<String,dynamic> manifestMap = json.decode(manifestContent);
     //load json file and print path
     final papersInAssets = manifestMap.keys.where((path) => path.startsWith("assets/DB/paper")&& path.contains(".json")).toList();
+    List<QuestionPaperModel> questionPapers = [];
     for(var paper in papersInAssets){
       String stringPaperContent = await rootBundle.loadString(paper);
-      print(stringPaperContent);
+      questionPapers.add(QuestionPaperModel.fromJson(json.decode(stringPaperContent)));
     }
+    print('Item number ${questionPapers.length}');
 
   }
 
