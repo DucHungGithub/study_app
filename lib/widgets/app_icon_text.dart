@@ -13,6 +13,7 @@ class AppIconText extends StatelessWidget {
         const SizedBox(
           width: 4,
         ),
+        text
       ],
     );
   }

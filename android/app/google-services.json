@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "160080045451-1mcerb1v0revk937pcs8ir96k1mhs5uc.apps.googleusercontent.com",
+          "client_id": "160080045451-mu8ooe0kl8rm87ci0ijpqo82221ffvnk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_study_app",
+            "certificate_hash": "9d3e8184241515175a68552666e89901fe8b48fc"
+          }
+        },
+        {
+          "client_id": "160080045451-ninglfn4umpe803g70sr2fdhc2hh6r5c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -50,7 +58,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "160080045451-1mcerb1v0revk937pcs8ir96k1mhs5uc.apps.googleusercontent.com",
+          "client_id": "160080045451-ninglfn4umpe803g70sr2fdhc2hh6r5c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'package:study_app_project/controllers/auth_controller.dart';
 import 'package:study_app_project/firebase_ref/references.dart';
 import 'package:study_app_project/models/question_paper_model.dart';
 import 'package:study_app_project/services/firebase_storage_service.dart';
@@ -15,7 +16,6 @@ class QuestionPaperController extends GetxController {
   }
 
   Future<void> getAllPapers() async {
-    List<String> imgName = ["biology", "chemistry", "maths", "physics"];
     try {
       QuerySnapshot<Map<String, dynamic>> data = await questionPaperRF.get();
       final paperList = data.docs
@@ -31,6 +31,21 @@ class QuestionPaperController extends GetxController {
       allPapers.assignAll(paperList);
     } catch (e) {
       print(e);
+    }
+  }
+
+  void navigateToQuestions(
+      {required QuestionPaperModel paper, bool tryAgain = false}) {
+    AuthController _authController = Get.find();
+    if (_authController.isLogged()) {
+      if (tryAgain) {
+        Get.back();
+        // Get.offNamed(page)
+      } else {
+        //Get.toNamed();
+      }
+    } else {
+      _authController.showLoginAlertDialog();
     }
   }
 }
