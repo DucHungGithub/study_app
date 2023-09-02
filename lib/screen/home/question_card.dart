@@ -15,7 +15,7 @@ class QuestionCard extends GetView<QuestionPaperController> {
 
   @override
   Widget build(BuildContext context) {
-    const double _padding = 10.0;
+    const double padding = 10.0;
     return Container(
       decoration: BoxDecoration(
           borderRadius: UIParameters.cardBorderRadius,
@@ -26,7 +26,7 @@ class QuestionCard extends GetView<QuestionPaperController> {
 
         },
         child: Padding(
-          padding: const EdgeInsets.all(_padding),
+          padding: const EdgeInsets.all(padding),
           child: Stack(
             clipBehavior: Clip.none,
             children: [
@@ -111,8 +111,8 @@ class QuestionCard extends GetView<QuestionPaperController> {
                 ],
               ),
               Positioned(
-                bottom: -_padding,
-                  right: -_padding,
+                bottom: -padding,
+                  right: -padding,
                   child: GestureDetector(
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 12),

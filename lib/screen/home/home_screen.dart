@@ -19,7 +19,7 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
 
   @override
   Widget build(BuildContext context) {
-    QuestionPaperController _questionPaperController = Get.find();
+    QuestionPaperController questionPaperController = Get.find();
     return Scaffold(
       body: GetBuilder<MyZoomDrawerController>(builder: (b) {
         return ZoomDrawer(
@@ -82,7 +82,7 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
                               itemBuilder: (BuildContext context, int index) {
                                 return QuestionCard(
                                   model:
-                                      _questionPaperController.allPapers[index],
+                                      questionPaperController.allPapers[index],
                                 );
                               },
                               separatorBuilder:
@@ -90,7 +90,7 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
                                 return const SizedBox(height: 20);
                               },
                               itemCount:
-                                  _questionPaperController.allPapers.length,
+                                  questionPaperController.allPapers.length,
                             )),
                       ),
                     ),

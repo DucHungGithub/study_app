@@ -20,7 +20,7 @@ class AppRoutes {
             })),
         GetPage(
           name: LoginScreen.routeName,
-          page: () => LoginScreen(),
+          page: () => const LoginScreen(),
         )
       ];
 }

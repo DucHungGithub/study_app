@@ -35,9 +35,9 @@ class AppIntroductionScreen extends StatelessWidget {
               const SizedBox(height: 40),
               AppCircleButton(
                 onTap: () {
-                  AuthController _authController = Get.find();
-                  if (!_authController.isLogged()) {
-                    _authController.showLoginAlertDialog();
+                  AuthController authController = Get.find();
+                  if (!authController.isLogged()) {
+                    authController.showLoginAlertDialog();
                   } else {
                     Get.put(FirebaseStorageService());
                     Get.offAllNamed("/home");
