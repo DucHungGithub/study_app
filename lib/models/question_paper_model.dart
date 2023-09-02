@@ -40,12 +40,12 @@ class QuestionPaperModel {
   String timeInMinits()=>"${(timeSeconds/60).ceil()} mins";
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['image_url'] = this.imageUrl;
-    data['Description'] = this.description;
-    data['time_seconds'] = this.timeSeconds;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['title'] = title;
+    data['image_url'] = imageUrl;
+    data['Description'] = description;
+    data['time_seconds'] = timeSeconds;
 
     return data;
   }
@@ -67,13 +67,11 @@ class Questions {
 
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['question'] = this.question;
-    if (this.answers != null) {
-      data['answers'] = this.answers!.map((v) => v.toJson()).toList();
-    }
-    data['correct_answer'] = this.correctAnswer;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['question'] = question;
+    data['answers'] = answers.map((v) => v.toJson()).toList();
+    data['correct_answer'] = correctAnswer;
     return data;
   }
 }
@@ -90,9 +88,9 @@ class Answers {
 
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['identifier'] = this.identifier;
-    data['Answer'] = this.answer;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['identifier'] = identifier;
+    data['Answer'] = answer;
     return data;
   }
 }
