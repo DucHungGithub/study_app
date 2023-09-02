@@ -36,8 +36,8 @@ class QuestionPaperController extends GetxController {
 
   void navigateToQuestions(
       {required QuestionPaperModel paper, bool tryAgain = false}) {
-    AuthController _authController = Get.find();
-    if (_authController.isLogged()) {
+    AuthController authController = Get.find();
+    if (authController.isLogged()) {
       if (tryAgain) {
         Get.back();
         // Get.offNamed(page)
@@ -45,7 +45,7 @@ class QuestionPaperController extends GetxController {
         //Get.toNamed();
       }
     } else {
-      _authController.showLoginAlertDialog();
+      authController.showLoginAlertDialog();
     }
   }
 }

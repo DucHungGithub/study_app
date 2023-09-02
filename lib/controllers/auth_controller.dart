@@ -4,6 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:study_app_project/firebase_ref/references.dart';
 import 'package:study_app_project/screen/home/home_screen.dart';
 import 'package:study_app_project/screen/login/login_screen.dart';
+import 'package:study_app_project/services/firebase_storage_service.dart';
 import 'package:study_app_project/widgets/dialogs/dialogue_widget.dart';
 
 class AuthController extends GetxController {
@@ -30,23 +31,23 @@ class AuthController extends GetxController {
   }
 
   void signInWithGoogle() async {
-    final GoogleSignIn _googleSignIn = GoogleSignIn();
+    final GoogleSignIn googleSignIn = GoogleSignIn();
     try {
-      GoogleSignInAccount? account = await _googleSignIn.signIn();
+      GoogleSignInAccount? account = await googleSignIn.signIn();
       if (account != null) {
-        final _authAccount = await account.authentication;
-        final _credential = GoogleAuthProvider.credential(
-          idToken: _authAccount.idToken,
-          accessToken: _authAccount.accessToken,
+        final authAccount = await account.authentication;
+        final credential = GoogleAuthProvider.credential(
+          idToken: authAccount.idToken,
+          accessToken: authAccount.accessToken,
         );
-        await _auth.signInWithCredential(_credential);
+        await _auth.signInWithCredential(credential);
         await saveUser(account);
+        Get.put(FirebaseStorageService());
         navigateToHomePage();
       }
     } on Exception catch (error) {
       print(error);
     }
-    ;
   }
 
   User? getUser(){
@@ -69,7 +70,7 @@ class AuthController extends GetxController {
   signOut() async {
     try{
       await _auth.signOut();
-      navigateToHomePage();
+      navigateToLoginPage();
 
     } on FirebaseAuthException catch(e){
       print(e);

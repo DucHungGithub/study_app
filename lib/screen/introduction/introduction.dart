@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:study_app_project/configs/themes/app_colors.dart';
+import 'package:study_app_project/controllers/auth_controller.dart';
 import 'package:study_app_project/services/firebase_storage_service.dart';
 import 'package:study_app_project/widgets/app_circle_button.dart';
 import 'package:get/get.dart';
@@ -34,8 +35,13 @@ class AppIntroductionScreen extends StatelessWidget {
               const SizedBox(height: 40),
               AppCircleButton(
                 onTap: () {
-                  Get.put(FirebaseStorageService());
-                  Get.offAllNamed("/home");
+                  AuthController _authController = Get.find();
+                  if (!_authController.isLogged()) {
+                    _authController.showLoginAlertDialog();
+                  } else {
+                    Get.put(FirebaseStorageService());
+                    Get.offAllNamed("/home");
+                  }
                 },
                 child: const Icon(
                   Icons.arrow_forward,
