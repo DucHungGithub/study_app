@@ -11,33 +11,34 @@ class QuestionPaperModel {
 
   QuestionPaperModel(
       {required this.id,
-        required this.title,
-        this.imageUrl,
-        required this.description,
-        required this.timeSeconds,
-        required this.questionCount,
-        this.questions});
+      required this.title,
+      this.imageUrl,
+      required this.description,
+      required this.timeSeconds,
+      required this.questionCount,
+      this.questions});
 
-  QuestionPaperModel.fromJson(Map<String, dynamic> json) :
-    id = json['id'] as String,
-    title = json['title'] as String,
-    imageUrl = json['image_url'] as String,
-    description = json['Description'] as String,
-    timeSeconds = json['time_seconds'],
-    questionCount=0,
-    questions = (json['questions'] as List).
-    map((dynamic e) => Questions.fromJson(e as Map<String,dynamic>)).toList();
+  QuestionPaperModel.fromJson(Map<String, dynamic> json)
+      : id = json['id'] as String,
+        title = json['title'] as String,
+        imageUrl = json['image_url'] as String,
+        description = json['Description'] as String,
+        timeSeconds = json['time_seconds'],
+        questionCount = 0,
+        questions = (json['questions'] as List)
+            .map((dynamic e) => Questions.fromJson(e as Map<String, dynamic>))
+            .toList();
 
-  QuestionPaperModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> json) :
-        id = json.id,
+  QuestionPaperModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> json)
+      : id = json.id,
         title = json['title'],
         imageUrl = json['image_url'],
         description = json['description'],
         timeSeconds = json['time_seconds'],
-        questionCount=json['questions_count'] as int,
+        questionCount = json['questions_count'] as int,
         questions = [];
 
-  String timeInMinits()=>"${(timeSeconds/60).ceil()} mins";
+  String timeInMinits() => "${(timeSeconds / 60).ceil()} mins";
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -57,14 +58,24 @@ class Questions {
   List<Answers> answers;
   String? correctAnswer;
 
-  Questions({required this.id, required this.question, required this.answers, this.correctAnswer});
+  Questions(
+      {required this.id,
+      required this.question,
+      required this.answers,
+      this.correctAnswer});
 
-  Questions.fromJson(Map<String, dynamic> json) :
-    id = json['id'],
-    question = json['question'],
-    answers=(json['answers'] as List).map((e) => Answers.fromJson(e)).toList(),
-    correctAnswer = json['correct_answer'];
+  Questions.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        question = json['question'],
+        answers =
+            (json['answers'] as List).map((e) => Answers.fromJson(e)).toList(),
+        correctAnswer = json['correct_answer'];
 
+  Questions.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+      : id = snapshot.id,
+        question = snapshot['question'],
+        answers = [],
+        correctAnswer = snapshot['correct_answer'];
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -82,10 +93,13 @@ class Answers {
 
   Answers({this.identifier, this.answer});
 
-  Answers.fromJson(Map<String, dynamic> json) :
-    identifier = json['identifier'],
-    answer = json['Answer'];
+  Answers.fromJson(Map<String, dynamic> json)
+      : identifier = json['identifier'],
+        answer = json['Answer'];
 
+  Answers.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+      : identifier = snapshot['identifier'] as String?,
+        answer = snapshot['Answer'] as String?;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

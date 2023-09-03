@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:study_app_project/controllers/question_page/question_paper_controller.dart';
+import 'package:study_app_project/controllers/question_page/questions_controller.dart';
 import 'package:study_app_project/controllers/zoom_drawer_controller.dart';
 import 'package:study_app_project/screen/home/home_screen.dart';
 import 'package:study_app_project/screen/introduction/introduction.dart';
@@ -24,8 +25,12 @@ class AppRoutes {
           page: () => const LoginScreen(),
         ),
         GetPage(
-          name: QuestionsScreen.routeName,
-          page: () => const QuestionsScreen(),
-        )
+            name: QuestionsScreen.routeName,
+            page: () => const QuestionsScreen(),
+            binding: BindingsBuilder(
+              () {
+                Get.put(QuestionsController());
+              },
+            )),
       ];
 }
