@@ -16,13 +16,16 @@ class QuestionCard extends GetView<QuestionPaperController> {
   @override
   Widget build(BuildContext context) {
     const double padding = 10.0;
-    return Container(
+    return Ink(
       decoration: BoxDecoration(
           borderRadius: UIParameters.cardBorderRadius,
-          color: Theme.of(context).cardColor),
+          color: Theme
+              .of(context)
+              .cardColor),
       child: InkWell(
-        onTap: (){
-          controller.navigateToQuestions(paper: model);
+        onTap: () {
+
+          controller.navigateToQuestions(paper: model, tryAgain: false);
 
         },
         child: Padding(
@@ -36,16 +39,20 @@ class QuestionCard extends GetView<QuestionPaperController> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: ColoredBox(
-                      color: Theme.of(context).primaryColor.withOpacity(0.1),
+                      color: Theme
+                          .of(context)
+                          .primaryColor
+                          .withOpacity(0.1),
                       child: SizedBox(
                         height: Get.width * 0.15,
                         width: Get.width * 0.15,
                         child: CachedNetworkImage(
                           imageUrl: model.imageUrl!,
-                          placeholder: (context, url) => Container(
-                            alignment: Alignment.center,
-                            child: const CircularProgressIndicator(),
-                          ),
+                          placeholder: (context, url) =>
+                              Container(
+                                alignment: Alignment.center,
+                                child: const CircularProgressIndicator(),
+                              ),
                           errorWidget: (context, url, error) =>
                               Image.asset("assets/images/app_splash_logo.png"),
                         ),
@@ -71,16 +78,19 @@ class QuestionCard extends GetView<QuestionPaperController> {
                                 Icons.help_outline_sharp,
                                 color: Get.isDarkMode
                                     ? Colors.white
-                                    : Theme.of(context)
-                                        .primaryColor
-                                        .withOpacity(0.3),
+                                    : Theme
+                                    .of(context)
+                                    .primaryColor
+                                    .withOpacity(0.3),
                               ),
                               text: Text(
                                 '${model.questionCount.toString()} questions',
                                 style: detailText.copyWith(
                                     color: Get.isDarkMode
                                         ? Colors.white
-                                        : Theme.of(context).primaryColor),
+                                        : Theme
+                                        .of(context)
+                                        .primaryColor),
                               ),
                             ),
                             const SizedBox(
@@ -91,16 +101,19 @@ class QuestionCard extends GetView<QuestionPaperController> {
                                 Icons.timer,
                                 color: Get.isDarkMode
                                     ? Colors.white
-                                    : Theme.of(context)
-                                        .primaryColor
-                                        .withOpacity(0.3),
+                                    : Theme
+                                    .of(context)
+                                    .primaryColor
+                                    .withOpacity(0.3),
                               ),
                               text: Text(
                                 model.timeInMinits(),
                                 style: detailText.copyWith(
                                     color: Get.isDarkMode
                                         ? Colors.white
-                                        : Theme.of(context).primaryColor),
+                                        : Theme
+                                        .of(context)
+                                        .primaryColor),
                               ),
                             ),
                           ],
@@ -111,21 +124,24 @@ class QuestionCard extends GetView<QuestionPaperController> {
                 ],
               ),
               Positioned(
-                bottom: -padding,
+                  bottom: -padding,
                   right: -padding,
                   child: GestureDetector(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 12),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(cardBorderRadius),
-                      bottomRight: Radius.circular(cardBorderRadius),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 12),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(cardBorderRadius),
+                            bottomRight: Radius.circular(cardBorderRadius),
+                          ),
+                          color: Theme
+                              .of(context)
+                              .primaryColor
+                      ),
+                      child: const Icon(AppIcons.trophyOutLine),
                     ),
-                    color: Theme.of(context).primaryColor
-                  ),
-                  child: const Icon(AppIcons.trophyOutLine),
-                ),
-              ))
+                  ))
             ],
           ),
         ),
