@@ -22,6 +22,7 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
     QuestionPaperController questionPaperController = Get.find();
     return Scaffold(
       body: GetBuilder<MyZoomDrawerController>(builder: (b) {
+        b.onReady();
         return ZoomDrawer(
           borderRadius: 50.0,
           controller: b.zoomDrawerController,
