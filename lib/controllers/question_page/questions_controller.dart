@@ -17,6 +17,7 @@ class QuestionsController extends GetxController {
 
   bool get isLastQuestion => questionIndex.value >= allQuestions.length - 1;
   Rxn<Questions> currentQuestion = Rxn<Questions>();
+
   //Timer
   Timer? _timer;
   int remainSeconds = 1;
@@ -25,7 +26,9 @@ class QuestionsController extends GetxController {
   @override
   void onReady() {
     final questionPaper = Get.arguments as QuestionPaperModel;
-    print(questionPaper.title);
+    if (kDebugMode) {
+      print("...onReady...");
+    }
     loadData(questionPaper);
     super.onReady();
   }
@@ -122,9 +125,9 @@ class QuestionsController extends GetxController {
       if (remainSeconds == 0) {
         timer.cancel();
       } else {
-        int minutes = remainSeconds ~/ 60;
+        int minues = remainSeconds ~/ 60;
         int seconds = remainSeconds % 60;
-        time.value = minutes.toString().padLeft(2, "0") +
+        time.value = minues.toString().padLeft(2, "0") +
             ":" +
             seconds.toString().padLeft(2, "0");
         remainSeconds--;

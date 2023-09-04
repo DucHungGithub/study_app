@@ -18,10 +18,3 @@ const headerText = TextStyle(
 
 const appBarTs = TextStyle(
     fontWeight: FontWeight.bold, fontSize: 16, color: onSurfaceTextColor);
-
-TextStyle countDownTimerTs() => TextStyle(
-      letterSpacing: 2,
-      color: UIParameters.isDarkMode()
-          ? Theme.of(Get.context!).textTheme.bodyLarge!.color
-          : Theme.of(Get.context!).primaryColor,
-    );
