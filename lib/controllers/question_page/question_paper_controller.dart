@@ -41,7 +41,11 @@ class QuestionPaperController extends GetxController {
     if (authController.isLogged()) {
       if (tryAgain) {
         Get.back();
-        // Get.offNamed(page)
+        Get.toNamed(
+          QuestionsScreen.routeName,
+          arguments: paper,
+          preventDuplicates: false
+        );
       } else {
         Get.toNamed(QuestionsScreen.routeName, arguments: paper);
       }
