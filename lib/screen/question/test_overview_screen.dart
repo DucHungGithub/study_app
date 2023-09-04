@@ -5,6 +5,7 @@ import 'package:study_app_project/configs/themes/ui_parameters.dart';
 import 'package:study_app_project/controllers/question_page/questions_controller.dart';
 import 'package:study_app_project/widgets/common/background_decoration.dart';
 import 'package:study_app_project/widgets/common/custom_app_bar.dart';
+import 'package:study_app_project/widgets/common/main_button.dart';
 import 'package:study_app_project/widgets/content_area.dart';
 import 'package:study_app_project/widgets/questions/answer_card.dart';
 import 'package:study_app_project/widgets/questions/countdown_timer.dart';
@@ -62,11 +63,24 @@ class TestOverviewScreen extends GetView<QuestionsController> {
                       return QuestionNumberCard(
                           index: index + 1,
                           status: _answerStatus,
-                          onTap: () => controller.jumpToQuestion(index));
+                          onTap: () => controller.jumpToQuestion(index)
+                      );
                     }),
               )
             ],
           )),
+        ),
+        ColoredBox(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          child: Padding(
+            padding: UIParameters.mobileScreenPadding,
+            child: MainButton(
+              onTap: () {
+                controller.complete();
+              },
+              title: 'Complete',
+            )
+          ),
         )
       ])),
     );

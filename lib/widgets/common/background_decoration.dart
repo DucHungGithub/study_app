@@ -21,7 +21,7 @@ class BackgroundDecoration extends StatelessWidget {
             painter: BackgroundPainter(),
           ),
         )),
-        Positioned(child: SafeArea(child: child))
+        Positioned.fill(child: SafeArea(child: child))
       ],
     );
   }
