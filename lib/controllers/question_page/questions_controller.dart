@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
@@ -10,8 +12,16 @@ class QuestionsController extends GetxController {
   late QuestionPaperModel questionPaperModel;
   final allQuestions = <Questions>[];
   final questionIndex = 0.obs;
+
   bool get isFirstQuestion => questionIndex.value > 0;
+
+  bool get isLastQuestion => questionIndex.value >= allQuestions.length - 1;
   Rxn<Questions> currentQuestion = Rxn<Questions>();
+  //Timer
+  Timer? _timer;
+  int remainSeconds = 1;
+  final time = '00.00'.obs;
+
 
   @override
   void onReady() {
@@ -55,9 +65,9 @@ class QuestionsController extends GetxController {
           if (kDebugMode) {
             print(questionPaper.questions![0].question);
           }
-          //loadingStatus.value = LoadingStatus.completed;
-        }else{
-          loadingStatus.value=LoadingStatus.error;
+          loadingStatus.value = LoadingStatus.completed;
+        } else {
+          loadingStatus.value = LoadingStatus.error;
         }
       }
     } catch (e) {
@@ -73,9 +83,18 @@ class QuestionsController extends GetxController {
   }
 
   void nextQuestion() {
-    if (questionIndex.value >= allQuestions.length-1)
+    if (questionIndex.value >= allQuestions.length - 1) {
       return; // we don't have any question left
+    }
     questionIndex.value++;
+    currentQuestion.value = allQuestions[questionIndex.value];
+  }
+
+  void preQuestion() {
+    if (questionIndex.value <= 0) {
+      return; // we don't have any question left
+    }
+    questionIndex.value--;
     currentQuestion.value = allQuestions[questionIndex.value];
   }
 }

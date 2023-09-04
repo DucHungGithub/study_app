@@ -50,6 +50,7 @@ dependencies:
   easy_separator: ^1.0.1
   firebase_app_check: ^0.1.5+2
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
