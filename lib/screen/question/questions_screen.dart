@@ -27,7 +27,7 @@ class QuestionsScreen extends GetView<QuestionsController> {
           decoration: const ShapeDecoration(
               shape: StadiumBorder(
                   side: BorderSide(color: onSurfaceTextColor, width: 2))),
-          child: const Text("Timer"),
+          child: Obx(() => Text('${controller.time.value}')),
         ),
         showActionIcon: true,
         titleWidget: Obx(() => Text(
