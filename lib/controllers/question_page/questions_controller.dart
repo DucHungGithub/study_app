@@ -57,23 +57,24 @@ class QuestionsController extends GetxController {
             .map((answer) => Answers.fromSnapshot(answer))
             .toList();
         _question.answers = answers;
-        if (questionPaper.questions != null &&
-            questionPaper.questions!.isNotEmpty) {
-          allQuestions.assignAll(questionPaper.questions!);
-          currentQuestion.value = questionPaper.questions![0];
-          _startTimer(questionPaper.timeSeconds);
-          if (kDebugMode) {
-            print(questionPaper.questions![0].question);
-          }
-          loadingStatus.value = LoadingStatus.completed;
-        } else {
-          loadingStatus.value = LoadingStatus.error;
-        }
       }
     } catch (e) {
       if (kDebugMode) {
         print(e.toString());
       }
+    }
+
+    if (questionPaper.questions != null &&
+        questionPaper.questions!.isNotEmpty) {
+      allQuestions.assignAll(questionPaper.questions!);
+      currentQuestion.value = questionPaper.questions![0];
+      _startTimer(questionPaper.timeSeconds);
+      if (kDebugMode) {
+        print(questionPaper.questions![0].question);
+      }
+      loadingStatus.value = LoadingStatus.completed;
+    } else {
+      loadingStatus.value = LoadingStatus.error;
     }
   }
 
