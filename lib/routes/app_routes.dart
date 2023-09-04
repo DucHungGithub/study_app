@@ -30,7 +30,7 @@ class AppRoutes {
             page: () => const QuestionsScreen(),
             binding: BindingsBuilder(
               () {
-                Get.put(QuestionsController());
+                Get.put<QuestionsController>(QuestionsController());
               },
             )),
         GetPage(
