@@ -11,6 +11,7 @@ class QuestionsController extends GetxController {
   final allQuestions = <Questions>[];
   final questionIndex = 0.obs;
   bool get isFirstQuestion => questionIndex.value > 0;
+  bool get isLastQuestion => questionIndex.value >= allQuestions.length-1;
   Rxn<Questions> currentQuestion = Rxn<Questions>();
 
   @override
@@ -76,6 +77,13 @@ class QuestionsController extends GetxController {
     if (questionIndex.value >= allQuestions.length-1)
       return; // we don't have any question left
     questionIndex.value++;
+    currentQuestion.value = allQuestions[questionIndex.value];
+  }
+
+  void prevQuestion() {
+    if (questionIndex.value <= 0)
+      return;
+    questionIndex.value--;
     currentQuestion.value = allQuestions[questionIndex.value];
   }
 }

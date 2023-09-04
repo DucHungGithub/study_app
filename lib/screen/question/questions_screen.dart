@@ -6,6 +6,7 @@ import 'package:study_app_project/configs/themes/ui_parameters.dart';
 import 'package:study_app_project/controllers/question_page/questions_controller.dart';
 import 'package:study_app_project/firebase_ref/loading_status.dart';
 import 'package:study_app_project/widgets/common/background_decoration.dart';
+import 'package:study_app_project/widgets/common/custom_app_bar.dart';
 import 'package:study_app_project/widgets/common/main_button.dart';
 import 'package:study_app_project/widgets/common/question_place_holder.dart';
 import 'package:study_app_project/widgets/content_area.dart';
@@ -19,6 +20,20 @@ class QuestionsScreen extends GetView<QuestionsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: CustomAppBar(
+        leading: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          decoration: const ShapeDecoration(
+            shape: StadiumBorder(
+              side: BorderSide(color: onSurfaceTextColor, width: 2)
+            )
+          ),
+          child: Obx(
+            () => const Text('Timer')
+          ),
+        )
+      ),
       body: BackgroundDecoration(
         child: Obx(
           () => Column(
@@ -66,33 +81,49 @@ class QuestionsScreen extends GetView<QuestionsController> {
                   ),
                 ),
               ColoredBox(
-                            color: Theme.of(context).scaffoldBackgroundColor,
-                            child: Padding(
-                              padding: UIParameters.mobileScreenPadding,
-                              child: Row(
-                                children: [
-                                  Visibility(
-                                    visible: controller.isFirstQuestion,
-                                    child: SizedBox(
-                                      width: 55,
-                                      height: 55,
-                                      child: MainButton(
-                                        onTap: () {
-
-                                        },
-                                        child: Icon(
-                                          Icons.arrow_back_ios_new,
-                                          color: Get.isDarkMode
-                                            ? onSurfaceTextColor
-                                            : Theme.of(context).primaryColor,
-                                        ),
-                                      ),
-                                    )
-                                  ),
-                                ],
+                color: Theme.of(context).scaffoldBackgroundColor,
+                child: Padding(
+                  padding: UIParameters.mobileScreenPadding,
+                  child: Row(
+                    children: [
+                      Visibility(
+                        visible: controller.isFirstQuestion,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 5),
+                          child: SizedBox(
+                            width: 55,
+                            height: 55,
+                            child: MainButton(
+                              onTap: () {
+                                controller.prevQuestion();
+                              },
+                              child: Icon(
+                                Icons.arrow_back_ios_new,
+                                color: Get.isDarkMode
+                                  ? onSurfaceTextColor
+                                  : Theme.of(context).primaryColor,
                               ),
                             ),
-                          )
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Visibility(
+                          visible: controller.loadingStatus.value == LoadingStatus.completed,
+                          child: MainButton(
+                            onTap: () {
+                              controller.isLastQuestion
+                                ? Container()
+                                : controller.nextQuestion();
+                            },
+                            title: controller.isLastQuestion ? 'Complete' : 'Next',
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )
             ],
           )
         ),
