@@ -5,12 +5,14 @@ import 'package:study_app_project/configs/themes/custom_text_styles.dart';
 import 'package:study_app_project/configs/themes/ui_parameters.dart';
 import 'package:study_app_project/controllers/question_page/questions_controller.dart';
 import 'package:study_app_project/firebase_ref/loading_status.dart';
+import 'package:study_app_project/screen/question/test_overview_screen.dart';
 import 'package:study_app_project/widgets/common/background_decoration.dart';
 import 'package:study_app_project/widgets/common/custom_app_bar.dart';
 import 'package:study_app_project/widgets/common/main_button.dart';
 import 'package:study_app_project/widgets/common/question_place_holder.dart';
 import 'package:study_app_project/widgets/content_area.dart';
 import 'package:study_app_project/widgets/questions/answer_card.dart';
+import 'package:study_app_project/widgets/questions/countdown_timer.dart';
 
 class QuestionsScreen extends GetView<QuestionsController> {
   const QuestionsScreen({super.key});
@@ -27,7 +29,10 @@ class QuestionsScreen extends GetView<QuestionsController> {
           decoration: const ShapeDecoration(
               shape: StadiumBorder(
                   side: BorderSide(color: onSurfaceTextColor, width: 2))),
-          child: const Text("Timer"),
+          child: Obx(() => CountdownTimer(
+                time: controller.time.value,
+                color: onSurfaceTextColor,
+              )),
         ),
         showActionIcon: true,
         titleWidget: Obx(() => Text(
@@ -118,7 +123,8 @@ class QuestionsScreen extends GetView<QuestionsController> {
                               child: MainButton(
                                 onTap: () {
                                   controller.isLastQuestion
-                                      ? Container()
+                                      ? Get.toNamed(
+                                          TestOverviewScreen.routeName)
                                       : controller.nextQuestion();
                                 },
                                 title: controller.isLastQuestion
