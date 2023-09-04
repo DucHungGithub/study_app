@@ -6,6 +6,7 @@ import 'package:study_app_project/screen/home/home_screen.dart';
 import 'package:study_app_project/screen/introduction/introduction.dart';
 import 'package:study_app_project/screen/login/login_screen.dart';
 import 'package:study_app_project/screen/question/questions_screen.dart';
+import 'package:study_app_project/screen/question/test_overview_screen.dart';
 import 'package:study_app_project/screen/splash/splash_screen.dart';
 
 class AppRoutes {
@@ -25,11 +26,16 @@ class AppRoutes {
           page: () => const LoginScreen(),
         ),
         GetPage(
-          name: QuestionsScreen.routeName,
-          page: () => const QuestionsScreen(),
-          binding: BindingsBuilder(() {
-            Get.put(QuestionsController());
-          },)
+            name: QuestionsScreen.routeName,
+            page: () => const QuestionsScreen(),
+            binding: BindingsBuilder(
+              () {
+                Get.put(QuestionsController());
+              },
+            )),
+        GetPage(
+          name: TestOverviewScreen.routeName,
+          page: () => const TestOverviewScreen(),
         ),
       ];
 }
