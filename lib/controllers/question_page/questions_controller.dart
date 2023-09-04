@@ -9,6 +9,7 @@ class QuestionsController extends GetxController {
   final loadingStatus = LoadingStatus.loading.obs;
   late QuestionPaperModel questionPaperModel;
   final allQuestions = <Questions>[];
+  Rxn<Questions> currentQuestion = Rxn<Questions>();
 
   @override
   void onReady() {
@@ -48,10 +49,11 @@ class QuestionsController extends GetxController {
         if (questionPaper.questions != null &&
             questionPaper.questions!.isNotEmpty) {
           allQuestions.assignAll(questionPaper.questions!);
+          currentQuestion.value = questionPaper.questions![0];
           if (kDebugMode) {
             print(questionPaper.questions![0].question);
           }
-          loadingStatus.value = LoadingStatus.completed;
+          //loadingStatus.value = LoadingStatus.completed;
         }else{
           loadingStatus.value=LoadingStatus.error;
         }
