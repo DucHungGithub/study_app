@@ -34,7 +34,11 @@ class ResultScreen extends GetView<QuestionsController> {
               child: ContentArea(
                 child: Column(
                   children: [
-                    SvgPicture.asset('assets/images/bulb.svg'),
+                    SvgPicture.asset(
+                      'assets/images/bulb.svg',
+                      width: 120,
+                      height: 160
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20, bottom: 5),
                       child: Text(
