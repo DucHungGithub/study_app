@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Dialogs {
@@ -6,7 +5,7 @@ class Dialogs {
 
   Dialogs._internal();
 
-  factory Dialogs(){
+  factory Dialogs() {
     return _singleton;
   }
 
@@ -18,19 +17,14 @@ class Dialogs {
         children: [
           Text(
             "Hi...",
-            style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold
-            ),
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           Text(
             "Please login before you start",
           )
         ],
       ),
-      actions: [
-        TextButton(onPressed: onTap, child: const Text("Confirm"))
-      ],
+      actions: [TextButton(onPressed: onTap, child: const Text("Confirm"))],
     );
   }
 }

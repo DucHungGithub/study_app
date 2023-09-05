@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:study_app_project/firebase_ref/references.dart';
@@ -46,12 +47,14 @@ class AuthController extends GetxController {
         navigateToHomePage();
       }
     } on Exception catch (error) {
-      print(error);
+      if (kDebugMode) {
+        print(error);
+      }
     }
   }
 
-  User? getUser(){
-    _user.value=_auth.currentUser;
+  User? getUser() {
+    _user.value = _auth.currentUser;
     return _user.value;
   }
 
@@ -68,12 +71,13 @@ class AuthController extends GetxController {
   }
 
   signOut() async {
-    try{
+    try {
       await _auth.signOut();
       navigateToLoginPage();
-
-    } on FirebaseAuthException catch(e){
-      print(e);
+    } on FirebaseAuthException catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 

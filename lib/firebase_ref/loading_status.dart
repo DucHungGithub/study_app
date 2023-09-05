@@ -1,4 +1,4 @@
-enum LoadingStatus{
+enum LoadingStatus {
   loading,
   completed,
   error,

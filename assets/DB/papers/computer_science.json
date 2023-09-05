@@ -1,0 +1,239 @@
+{
+  "id": "ppr003",
+  "title": "Computer Science",
+  "image_url": "",
+  "Description": "Undergraduate Computer Science",
+  "time_seconds": 1800,
+  "questions": [
+    {
+      "id": "ppr003q001",
+      "question": "In C++, what data structure is used to implement std::unordered_map?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "Splay tree"
+        },
+        {
+          "identifier": "B",
+          "Answer": "Red Black tree"
+        },
+        {
+          "identifier": "C",
+          "Answer": "Hash table"
+        },
+        {
+          "identifier": "D",
+          "Answer": "Suffix tree"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr003q002",
+      "question": "What is the time complexity of searching in a binary search tree?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "O(1)"
+        },
+        {
+          "identifier": "B",
+          "Answer": "O(n)"
+        },
+        {
+          "identifier": "C",
+          "Answer": "O(log n)"
+        },
+        {
+          "identifier": "D",
+          "Answer": "O(n log n)"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr003q003",
+      "question": "Which sorting algorithm has the worst-case time complexity of O(n^2)?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "QuickSort"
+        },
+        {
+          "identifier": "B",
+          "Answer": "MergeSort"
+        },
+        {
+          "identifier": "C",
+          "Answer": "BubbleSort"
+        },
+        {
+          "identifier": "D",
+          "Answer": "InsertionSort"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr003q004",
+      "question": "What is the purpose of a compiler?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "To execute code"
+        },
+        {
+          "identifier": "B",
+          "Answer": "To debug code"
+        },
+        {
+          "identifier": "C",
+          "Answer": "To translate code into machine language"
+        },
+        {
+          "identifier": "D",
+          "Answer": "To manage memory"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr003q005",
+      "question": "What is the primary function of an operating system?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "To compile code"
+        },
+        {
+          "identifier": "B",
+          "Answer": "To run applications"
+        },
+        {
+          "identifier": "C",
+          "Answer": "To manage hardware resources"
+        },
+        {
+          "identifier": "D",
+          "Answer": "To create user interfaces"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr003q006",
+      "question": "Which programming language is often used for web development on the client-side?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "Java"
+        },
+        {
+          "identifier": "B",
+          "Answer": "Python"
+        },
+        {
+          "identifier": "C",
+          "Answer": "JavaScript"
+        },
+        {
+          "identifier": "D",
+          "Answer": "C++"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr003q007",
+      "question": "What is the purpose of an index in a database?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "To format data"
+        },
+        {
+          "identifier": "B",
+          "Answer": "To optimize data retrieval"
+        },
+        {
+          "identifier": "C",
+          "Answer": "To encrypt data"
+        },
+        {
+          "identifier": "D",
+          "Answer": "To store backup data"
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "ppr003q008",
+      "question": "Which data structure is used to represent a stack?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "Queue"
+        },
+        {
+          "identifier": "B",
+          "Answer": "Array"
+        },
+        {
+          "identifier": "C",
+          "Answer": "Linked List"
+        },
+        {
+          "identifier": "D",
+          "Answer": "LIFO"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr003q009",
+      "question": "What is the purpose of a loop in programming?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "To store data"
+        },
+        {
+          "identifier": "B",
+          "Answer": "To jump to a different part of the program"
+        },
+        {
+          "identifier": "C",
+          "Answer": "To execute a set of instructions repeatedly"
+        },
+        {
+          "identifier": "D",
+          "Answer": "To create functions"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr003q010",
+      "question": "What is the binary representation of the decimal number 10?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "1010"
+        },
+        {
+          "identifier": "B",
+          "Answer": "1001"
+        },
+        {
+          "identifier": "C",
+          "Answer": "1100"
+        },
+        {
+          "identifier": "D",
+          "Answer": "1110"
+        }
+      ],
+      "correct_answer": "A"
+    }
+  ]
+}

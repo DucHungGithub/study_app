@@ -17,37 +17,41 @@ class QuestionNumberCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color _backgroundColor = Theme.of(context).primaryColor;
+    Color backgroundColor = Theme.of(context).primaryColor;
     switch (status) {
       case AnswerStatus.answered:
-        _backgroundColor:
-        Get.isDarkMode
+        backgroundColor = Get.isDarkMode
             ? Theme.of(context).cardColor
             : Theme.of(context).primaryColor;
         break;
 
       case AnswerStatus.correct:
-        _backgroundColor = correctAnswerColor;
+        backgroundColor = correctAnswerColor;
         break;
 
       case AnswerStatus.wrong:
-        _backgroundColor = wrongAnswerColor;
+        backgroundColor = wrongAnswerColor;
         break;
 
       case AnswerStatus.notanswered:
-        _backgroundColor = Get.isDarkMode
+        backgroundColor = Get.isDarkMode
             ? Colors.red.withOpacity(0.5)
             : Theme.of(context).primaryColor.withOpacity(0.1);
         break;
 
       default:
-        _backgroundColor = Theme.of(context).primaryColor.withOpacity(0.1);
+        backgroundColor = Theme.of(context).primaryColor.withOpacity(0.1);
     }
 
     return InkWell(
         onTap: onTap,
         borderRadius: UIParameters.cardBorderRadius,
         child: Ink(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: UIParameters.cardBorderRadius,
+          ),
           child: Center(
               child: Text(
             '$index',
@@ -56,11 +60,6 @@ class QuestionNumberCard extends StatelessWidget {
                     ? Theme.of(context).primaryColor
                     : null),
           )),
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: _backgroundColor,
-            borderRadius: UIParameters.cardBorderRadius,
-          ),
         ));
   }
 }

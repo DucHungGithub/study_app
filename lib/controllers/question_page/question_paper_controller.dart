@@ -25,9 +25,11 @@ class QuestionPaperController extends GetxController {
       allPapers.assignAll(paperList);
 
       for (var paper in paperList) {
+        String paperLink = paper.title.replaceAll(" ", "_");
         final imgUrl =
-            await Get.find<FirebaseStorageService>().getImage(paper.title);
+            await Get.find<FirebaseStorageService>().getImage(paperLink);
         paper.imageUrl = imgUrl;
+        print(paper.imageUrl);
       }
       allPapers.assignAll(paperList);
     } catch (e) {
@@ -41,11 +43,8 @@ class QuestionPaperController extends GetxController {
     if (authController.isLogged()) {
       if (tryAgain) {
         Get.back();
-        Get.toNamed(
-          QuestionsScreen.routeName,
-          arguments: paper,
-          preventDuplicates: false
-        );
+        Get.toNamed(QuestionsScreen.routeName,
+            arguments: paper, preventDuplicates: false);
       } else {
         Get.toNamed(QuestionsScreen.routeName, arguments: paper);
       }

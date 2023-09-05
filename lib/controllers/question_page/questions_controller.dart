@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:study_app_project/controllers/auth_controller.dart';
 import 'package:study_app_project/controllers/question_page/question_paper_controller.dart';
 import 'package:study_app_project/firebase_ref/loading_status.dart';
 import 'package:study_app_project/firebase_ref/references.dart';
@@ -52,18 +51,18 @@ class QuestionsController extends GetxController {
           .toList();
 
       questionPaper.questions = questions;
-      for (Questions _question in questionPaper.questions!) {
+      for (Questions question in questionPaper.questions!) {
         final QuerySnapshot<Map<String, dynamic>> answersQuery =
             await questionPaperRF
                 .doc(questionPaper.id)
                 .collection("questions")
-                .doc(_question.id)
+                .doc(question.id)
                 .collection("answers")
                 .get();
         final answers = answersQuery.docs
             .map((answer) => Answers.fromSnapshot(answer))
             .toList();
-        _question.answers = answers;
+        question.answers = answers;
       }
     } catch (e) {
       if (kDebugMode) {
@@ -98,10 +97,10 @@ class QuestionsController extends GetxController {
     return '$answered out of ${allQuestions.length} answered';
   }
 
-  void jumpToQuestion(int index, {bool isGoback = true}) {
+  void jumpToQuestion(int index, {bool isGoBack = true}) {
     questionIndex.value = index;
     currentQuestion.value = allQuestions[index];
-    if (isGoback) {
+    if (isGoBack) {
       Get.back();
     }
   }
@@ -129,11 +128,10 @@ class QuestionsController extends GetxController {
       if (remainSeconds == 0) {
         timer.cancel();
       } else {
-        int minues = remainSeconds ~/ 60;
+        int minutes = remainSeconds ~/ 60;
         int seconds = remainSeconds % 60;
-        time.value = minues.toString().padLeft(2, "0") +
-            ":" +
-            seconds.toString().padLeft(2, "0");
+        time.value =
+            "${minutes.toString().padLeft(2, "0")}:${seconds.toString().padLeft(2, "0")}";
         remainSeconds--;
       }
     });
@@ -142,14 +140,14 @@ class QuestionsController extends GetxController {
   void complete() {
     _timer!.cancel();
     Get.offAndToNamed(ResultScreen.routeName);
+    // Get.offNamed(ResultScreen.routeName);
     //Get.offNamed("/home");
   }
 
   void tryAgain() {
-    Get.find<QuestionPaperController>().navigateToQuestions(
-      paper: questionPaperModel,
-      tryAgain: true
-    );
+    _startTimer(questionPaperModel.timeSeconds);
+    Get.find<QuestionPaperController>()
+        .navigateToQuestions(paper: questionPaperModel, tryAgain: true);
   }
 
   void navigateToHome() {

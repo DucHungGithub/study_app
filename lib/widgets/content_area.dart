@@ -5,7 +5,8 @@ import 'package:study_app_project/configs/themes/ui_parameters.dart';
 class ContentArea extends StatelessWidget {
   final bool addPadding;
   final Widget child;
-  const ContentArea({super.key, this.addPadding=true, required this.child});
+
+  const ContentArea({super.key, this.addPadding = true, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +15,13 @@ class ContentArea extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       type: MaterialType.transparency,
       child: Ink(
-        decoration: BoxDecoration(
-          color: customScaffoldColor(context)
-        ),
-        padding: addPadding?EdgeInsets.only(
-          top: mobileScreenPadding,
-          left: mobileScreenPadding,
-          right: mobileScreenPadding
-        ):EdgeInsets.zero,
+        decoration: BoxDecoration(color: customScaffoldColor(context)),
+        padding: addPadding
+            ? EdgeInsets.only(
+                top: mobileScreenPadding,
+                left: mobileScreenPadding,
+                right: mobileScreenPadding)
+            : EdgeInsets.zero,
         child: child,
       ),
     );

@@ -65,7 +65,9 @@ class MenuScreen extends GetView<MyZoomDrawerController> {
                         onPressed: () => controller.email(),
                       ),
                     ),
-                    const Spacer(flex: 4,),
+                    const Spacer(
+                      flex: 4,
+                    ),
                     _DrawerButton(
                       icon: Icons.logout,
                       label: "logout",

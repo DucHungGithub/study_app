@@ -23,22 +23,19 @@ class MyZoomDrawerController extends GetxController {
     Get.find<AuthController>().signOut();
   }
 
-  void signIn() {
-
-  }
+  void signIn() {}
 
   void website() {
     _launch("https://www.dbestech.com");
   }
+
   void facebook() {
     _launch("https://www.facebook.com");
   }
 
   void email() {
-    final Uri emailLaunchUri = Uri(
-        scheme: 'mailto',
-        path: 'hungnp12345@gmail.com'
-    );
+    final Uri emailLaunchUri =
+        Uri(scheme: 'mailto', path: 'hungnp12345@gmail.com');
     _launch(emailLaunchUri.toString());
   }
 
@@ -47,5 +44,4 @@ class MyZoomDrawerController extends GetxController {
       throw 'could not launch $url';
     }
   }
-
 }

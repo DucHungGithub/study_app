@@ -55,9 +55,12 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           child: Row(
                             children: [
-                              const Icon(AppIcons.peace,color: Colors.white,),
+                              const Icon(
+                                AppIcons.peace,
+                                color: Colors.white,
+                              ),
                               Text(
-                                "Hello ${controller.user.value != null?controller.user.value!.displayName:"friend"}",
+                                "Hello ${controller.user.value != null ? controller.user.value!.displayName : "friend"}",
                                 style: detailText.copyWith(
                                   color: onSurfaceTextColor,
                                 ),

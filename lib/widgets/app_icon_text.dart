@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppIconText extends StatelessWidget {
   final Icon icon;
   final Widget text;
+
   const AppIconText({super.key, required this.icon, required this.text});
 
   @override

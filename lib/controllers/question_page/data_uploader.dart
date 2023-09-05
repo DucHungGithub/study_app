@@ -15,12 +15,11 @@ class DataUploader extends GetxController {
     uploadData();
     super.onReady();
   }
+
   final loadingStatus = LoadingStatus.loading.obs; //loadingStatus  obs
 
   Future<void> uploadData() async {
-    loadingStatus.value=LoadingStatus.loading;// 0
-
-
+    loadingStatus.value = LoadingStatus.loading; // 0
 
     final fireStore = FirebaseFirestore.instance;
     final manifestContent = await DefaultAssetBundle.of(Get.context!)

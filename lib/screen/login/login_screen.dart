@@ -37,8 +37,6 @@ class LoginScreen extends GetView<AuthController> {
             MainButton(
               onTap: () {
                 controller.signInWithGoogle();
-
-
               },
               child: Stack(
                 children: [
