@@ -7,6 +7,7 @@ import 'package:study_app_project/controllers/question_page/data_uploader_screen
 import 'package:study_app_project/controllers/theme_controller.dart';
 import 'package:study_app_project/firebase_options.dart';
 import 'package:study_app_project/routes/app_routes.dart';
+import 'package:study_app_project/screen/video/video_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,3 +42,10 @@ class MyApp extends StatelessWidget {
 //     home: DataUploaderScreen(),
 //   ));
 // }
+
+// void main()  {
+//   runApp(const GetMaterialApp(
+//     home: VideoConferencePage(conferenceID: "123"),
+//   ));
+// }
+

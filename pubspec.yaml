@@ -38,7 +38,7 @@ dependencies:
   firebase_core: ^2.15.1
   get: ^4.6.5
   cloud_firestore: ^4.9.0
-  google_fonts: ^5.1.0
+  google_fonts: ^4.0.4
   firebase_storage: ^11.2.6
   cached_network_image: ^3.2.3
   flutter_zoom_drawer: ^3.1.1
@@ -49,6 +49,7 @@ dependencies:
   flutter_svg: ^2.0.7
   easy_separator: ^1.0.1
   firebase_app_check: ^0.1.5+2
+  zego_uikit_prebuilt_video_conference: ^2.4.0
 
 
 dev_dependencies:
