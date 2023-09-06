@@ -1,0 +1,240 @@
+{
+    "id": "ppr001",
+    "title": "Statistics",
+    "image_url": "",
+    "Description": "Undergraduate Statistics",
+    "time_seconds": 1500,
+    "questions": [
+      {
+        "id": "ppr001q001",
+        "question": "What is the mean of the following data set: [12, 15, 18, 21, 24]?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "16"
+          },
+          {
+            "identifier": "B",
+            "Answer": "18"
+          },
+          {
+            "identifier": "C",
+            "Answer": "20"
+          },
+          {
+            "identifier": "D",
+            "Answer": "22"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr001q002",
+        "question": "What is the median of the data set: [7, 12, 15, 20, 23, 28, 34]?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "15"
+          },
+          {
+            "identifier": "B",
+            "Answer": "20"
+          },
+          {
+            "identifier": "C",
+            "Answer": "23"
+          },
+          {
+            "identifier": "D",
+            "Answer": "28"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr001q003",
+        "question": "In statistics, what does 'standard deviation' measure?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Central tendency"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Variability or dispersion"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Skewness"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Frequency distribution"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr001q004",
+        "question": "What is the probability of getting a head when flipping a fair coin?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "1/2"
+          },
+          {
+            "identifier": "B",
+            "Answer": "1/3"
+          },
+          {
+            "identifier": "C",
+            "Answer": "2/3"
+          },
+          {
+            "identifier": "D",
+            "Answer": "1/4"
+          }
+        ],
+        "correct_answer": "A"
+      },
+      {
+        "id": "ppr001q005",
+        "question": "What is the formula for calculating the variance of a data set?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Sum of squares of differences from the mean divided by sample size"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Sum of absolute differences from the mean divided by sample size"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Sum of squares of differences from the mean"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Square root of the sum of squares of differences from the mean"
+          }
+        ],
+        "correct_answer": "A"
+      },
+      {
+        "id": "ppr001q006",
+        "question": "What is the formula for calculating the z-score of a data point in a normal distribution?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Z = (X - μ) / σ"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Z = (X - σ) / μ"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Z = (X + μ) / σ"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Z = (X - μ) * σ"
+          }
+        ],
+        "correct_answer": "A"
+      },
+      {
+        "id": "ppr001q007",
+        "question": "What does the term 'confidence interval' represent in statistics?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "A range of values used to estimate a parameter with a certain level of confidence"
+          },
+          {
+            "identifier": "B",
+            "Answer": "The range of values in a data set"
+          },
+          {
+            "identifier": "C",
+            "Answer": "The mean of a data set"
+          },
+          {
+            "identifier": "D",
+            "Answer": "A measure of dispersion"
+          }
+        ],
+        "correct_answer": "A"
+      },
+      {
+        "id": "ppr001q008",
+        "question": "In hypothesis testing, what does the p-value represent?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "The probability that the null hypothesis is true"
+          },
+          {
+            "identifier": "B",
+            "Answer": "The probability of making a Type II error"
+          },
+          {
+            "identifier": "C",
+            "Answer": "The probability of rejecting the null hypothesis when it is true"
+          },
+          {
+            "identifier": "D",
+            "Answer": "The probability of accepting the null hypothesis"
+          }
+        ],
+        "correct_answer": "C"
+      },
+      {
+        "id": "ppr001q009",
+        "question": "What statistical test is commonly used to compare the means of two independent groups?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Chi-squared test"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Paired t-test"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Independent samples t-test"
+          },
+          {
+            "identifier": "D",
+            "Answer": "ANOVA"
+          }
+        ],
+        "correct_answer": "C"
+      },
+      {
+        "id": "ppr001q010",
+        "question": "What is the term for the process of selecting a subset of individuals from a population to estimate population parameters?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Sampling"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Hypothesis testing"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Regression analysis"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Randomization"
+          }
+        ],
+        "correct_answer": "A"
+      }
+    ]
+  }
+  
