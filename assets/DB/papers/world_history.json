@@ -1,0 +1,240 @@
+{
+    "id": "ppr005",
+    "title": "World History",
+    "image_url": "",
+    "Description": "Set of questions about the history of the world",
+    "time_seconds": 1200,
+    "questions": [
+      {
+        "id": "ppr005q001",
+        "question": "Who is known as the 'Father of History'?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Socrates"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Plato"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Aristotle"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Herodotus"
+          }
+        ],
+        "correct_answer": "D"
+      },
+      {
+        "id": "ppr005q002",
+        "question": "Which ancient civilization is credited with the invention of the wheel?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Mesopotamia"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Egypt"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Indus Valley"
+          },
+          {
+            "identifier": "D",
+            "Answer": "China"
+          }
+        ],
+        "correct_answer": "A"
+      },
+      {
+        "id": "ppr005q003",
+        "question": "Who was the first emperor of the Roman Empire?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Julius Caesar"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Augustus"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Nero"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Constantine"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr005q004",
+        "question": "Which famous explorer is known for his voyages to the New World in the late 15th century?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Marco Polo"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Vasco da Gama"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Christopher Columbus"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Ferdinand Magellan"
+          }
+        ],
+        "correct_answer": "C"
+      },
+      {
+        "id": "ppr005q005",
+        "question": "Who is known for leading the Indian independence movement against British colonial rule?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Jawaharlal Nehru"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Sardar Vallabhbhai Patel"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Mahatma Gandhi"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Subhas Chandra Bose"
+          }
+        ],
+        "correct_answer": "C"
+      },
+      {
+        "id": "ppr005q006",
+        "question": "Who was the leader of the Soviet Union during the Cuban Missile Crisis?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Joseph Stalin"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Nikita Khrushchev"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Leon Trotsky"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Mikhail Gorbachev"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr005q007",
+        "question": "What event marked the beginning of World War I?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "The assassination of Archduke Franz Ferdinand"
+          },
+          {
+            "identifier": "B",
+            "Answer": "The sinking of the Lusitania"
+          },
+          {
+            "identifier": "C",
+            "Answer": "The Treaty of Versailles"
+          },
+          {
+            "identifier": "D",
+            "Answer": "The invasion of Poland"
+          }
+        ],
+        "correct_answer": "A"
+      },
+      {
+        "id": "ppr005q008",
+        "question": "Which ancient civilization built the Great Wall of China?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Ancient Egypt"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Ancient Rome"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Ancient Greece"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Ancient China"
+          }
+        ],
+        "correct_answer": "D"
+      },
+      {
+        "id": "ppr005q009",
+        "question": "Who was the first female Prime Minister of the United Kingdom?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Queen Victoria"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Margaret Thatcher"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Angela Merkel"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Theresa May"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr005q010",
+        "question": "What was the name of the political and economic ideology associated with the Cold War rivalry between the United States and the Soviet Union?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Capitalism"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Communism"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Socialism"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Fascism"
+          }
+        ],
+        "correct_answer": "B"
+      }
+    ]
+  }
+  
