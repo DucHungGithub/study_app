@@ -1,0 +1,239 @@
+{
+  "id": "ppr002",
+  "title": "Single Variable Calculus",
+  "image_url": "",
+  "Description": "Undergraduate single variable calculus",
+  "time_seconds": 1200,
+  "questions": [
+    {
+      "id": "ppr002q001",
+      "question": "Find the derivative of the function f(x) = 3x^2 - 2x + 1.",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "6x - 2"
+        },
+        {
+          "identifier": "B",
+          "Answer": "3x^2 - 2x"
+        },
+        {
+          "identifier": "C",
+          "Answer": "3x^3 - x + C"
+        },
+        {
+          "identifier": "D",
+          "Answer": "6x + 2"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "ppr002q002",
+      "question": "What is the limit of the function lim(x -> 2) (x^2 - 4) / (x - 2)?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "2"
+        },
+        {
+          "identifier": "B",
+          "Answer": "0"
+        },
+        {
+          "identifier": "C",
+          "Answer": "4"
+        },
+        {
+          "identifier": "D",
+          "Answer": "Undefined"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr002q003",
+      "question": "Evaluate the integral ∫(0 to 1) 2x dx.",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "1"
+        },
+        {
+          "identifier": "B",
+          "Answer": "2"
+        },
+        {
+          "identifier": "C",
+          "Answer": "0"
+        },
+        {
+          "identifier": "D",
+          "Answer": "3"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "ppr002q004",
+      "question": "What is the derivative of the natural logarithm function ln(x)?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "1/x"
+        },
+        {
+          "identifier": "B",
+          "Answer": "x"
+        },
+        {
+          "identifier": "C",
+          "Answer": "e^x"
+        },
+        {
+          "identifier": "D",
+          "Answer": "0"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "ppr002q005",
+      "question": "Solve the equation 2x - 3 = 5 for x.",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "x = 4"
+        },
+        {
+          "identifier": "B",
+          "Answer": "x = -1"
+        },
+        {
+          "identifier": "C",
+          "Answer": "x = 8"
+        },
+        {
+          "identifier": "D",
+          "Answer": "x = 2"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "ppr002q006",
+      "question": "What is the second derivative of the function f(x) = sin(x)?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "cos(x)"
+        },
+        {
+          "identifier": "B",
+          "Answer": "-sin(x)"
+        },
+        {
+          "identifier": "C",
+          "Answer": "-cos(x)"
+        },
+        {
+          "identifier": "D",
+          "Answer": "sin(x)"
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "ppr002q007",
+      "question": "Calculate the area under the curve y = x^2 from x = 0 to x = 2.",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "2/3"
+        },
+        {
+          "identifier": "B",
+          "Answer": "4/3"
+        },
+        {
+          "identifier": "C",
+          "Answer": "8/3"
+        },
+        {
+          "identifier": "D",
+          "Answer": "16/3"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr002q008",
+      "question": "What is the derivative of the constant function f(x) = 5?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "0"
+        },
+        {
+          "identifier": "B",
+          "Answer": "5"
+        },
+        {
+          "identifier": "C",
+          "Answer": "1"
+        },
+        {
+          "identifier": "D",
+          "Answer": "Undefined"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "ppr002q009",
+      "question": "Find the equation of the tangent line to the curve y = 2x - 1 at the point (3, 5).",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "y = 2x + 1"
+        },
+        {
+          "identifier": "B",
+          "Answer": "y = 2x - 1"
+        },
+        {
+          "identifier": "C",
+          "Answer": "y = 3x + 1"
+        },
+        {
+          "identifier": "D",
+          "Answer": "y = 3x - 1"
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "ppr002q010",
+      "question": "What is the integral of the function f(x) = 2x^3 - 3x^2 + 1?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "x^4/2 - x^3/3 + x"
+        },
+        {
+          "identifier": "B",
+          "Answer": "x^4/2 - x^3/3 + x + C"
+        },
+        {
+          "identifier": "C",
+          "Answer": "x^4/2 - x^3/3 + x^2/2 + C"
+        },
+        {
+          "identifier": "D",
+          "Answer": "x^4/2 - x^3/3 + x^2/2"
+        }
+      ],
+      "correct_answer": "B"
+    }
+  ]
+}

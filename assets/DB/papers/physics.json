@@ -1,0 +1,240 @@
+{
+    "id": "ppr007",
+    "title": "Physics",
+    "image_url": "",
+    "Description": "Set of questions about high school Physics",
+    "time_seconds": 1200,
+    "questions": [
+      {
+        "id": "ppr007q001",
+        "question": "What is the SI unit of force?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Watt"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Newton"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Joule"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Pascal"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr007q002",
+        "question": "What is the acceleration due to gravity on Earth's surface (approximately)?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "10 m/s^2"
+          },
+          {
+            "identifier": "B",
+            "Answer": "9.8 m/s^2"
+          },
+          {
+            "identifier": "C",
+            "Answer": "5 m/s^2"
+          },
+          {
+            "identifier": "D",
+            "Answer": "12 m/s^2"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr007q003",
+        "question": "What is the law that states 'an object at rest stays at rest, and an object in motion stays in motion with the same speed and in the same direction unless acted upon by an unbalanced force'?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Newton's First Law of Motion"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Newton's Second Law of Motion"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Newton's Third Law of Motion"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Law of Inertia"
+          }
+        ],
+        "correct_answer": "A"
+      },
+      {
+        "id": "ppr007q004",
+        "question": "What type of energy is associated with the motion of objects?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Potential energy"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Kinetic energy"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Thermal energy"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Electrical energy"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr007q005",
+        "question": "What is the SI unit of electric charge?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Ampere"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Volt"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Coulomb"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Ohm"
+          }
+        ],
+        "correct_answer": "C"
+      },
+      {
+        "id": "ppr007q006",
+        "question": "What is the phenomenon where a wave changes direction as it passes through a medium and interacts with obstacles?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Reflection"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Refraction"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Diffraction"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Interference"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr007q007",
+        "question": "What is the term for the energy an object possesses due to its position or condition?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Kinetic energy"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Potential energy"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Thermal energy"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Mechanical energy"
+          }
+        ],
+        "correct_answer": "B"
+      },
+      {
+        "id": "ppr007q008",
+        "question": "What is the phenomenon where the frequency of a sound wave appears to change when the source and observer are in relative motion?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Doppler effect"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Interference"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Refraction"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Diffraction"
+          }
+        ],
+        "correct_answer": "A"
+      },
+      {
+        "id": "ppr007q009",
+        "question": "What is the term for the resistance of an object to changes in its motion?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Inertia"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Acceleration"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Force"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Gravity"
+          }
+        ],
+        "correct_answer": "A"
+      },
+      {
+        "id": "ppr007q010",
+        "question": "What is the formula for calculating the speed of a wave?",
+        "answers": [
+          {
+            "identifier": "A",
+            "Answer": "Speed = Frequency * Wavelength"
+          },
+          {
+            "identifier": "B",
+            "Answer": "Speed = Amplitude * Wavelength"
+          },
+          {
+            "identifier": "C",
+            "Answer": "Speed = Frequency / Amplitude"
+          },
+          {
+            "identifier": "D",
+            "Answer": "Speed = Wavelength / Frequency"
+          }
+        ],
+        "correct_answer": "A"
+      }
+    ]
+  }
+  
