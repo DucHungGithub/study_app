@@ -83,7 +83,7 @@ class QuestionCard extends GetView<QuestionPaperController> {
                               ),
                             ),
                             const SizedBox(
-                              width: 15,
+                              width: 10,
                             ),
                             AppIconText(
                               icon: Icon(
