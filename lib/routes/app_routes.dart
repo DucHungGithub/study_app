@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:study_app_project/controllers/habit_controller.dart';
 import 'package:study_app_project/controllers/question_page/question_paper_controller.dart';
 import 'package:study_app_project/controllers/question_page/questions_controller.dart';
 import 'package:study_app_project/controllers/zoom_drawer_controller.dart';
@@ -43,6 +44,11 @@ class AppRoutes {
         GetPage(
           name: ResultScreen.routeName,
           page: () => const ResultScreen(),
+          binding: BindingsBuilder(
+            () {
+              Get.put<HabitController>(HabitController());
+            },
+          ),
         ),
         GetPage(
           name: AnswerCheckScreen.routeName,
@@ -51,6 +57,11 @@ class AppRoutes {
         GetPage(
           name: HabitTrackerScreen.routeName,
           page: () => const HabitTrackerScreen(),
+          binding: BindingsBuilder(
+            () {
+              Get.put<HabitController>(HabitController());
+            },
+          ),
         ),
       ];
 }
