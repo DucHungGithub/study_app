@@ -3,10 +3,10 @@ import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
 import 'package:study_app_project/models/datetime.dart';
 
 class TrackerMap extends StatelessWidget {
-  final Map<DateTime, int>? datasets;
-  final String startDate;
+  final Map<DateTime, int> datasets;
+  final DateTime startDate;
 
-  const TrackerMap({
+  TrackerMap({
     super.key,
     required this.datasets,
     required this.startDate,
@@ -17,27 +17,26 @@ class TrackerMap extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 25, bottom: 25),
       child: HeatMap(
-        startDate: createDateTimeObject(startDate),
-        endDate: DateTime.now().add(Duration(days: 0)),
+        startDate: startDate,
+        //endDate: DateTime.now().add(Duration(days: 30)),
         datasets: datasets,
         colorMode: ColorMode.color,
-        defaultColor: Colors.grey[200],
-        textColor: Colors.white,
-        showColorTip: false,
+        textColor: Colors.black,
+        showColorTip: true,
         showText: true,
         scrollable: true,
         size: 30,
         colorsets: const {
-          1: Color.fromARGB(20, 2, 179, 8),
-          2: Color.fromARGB(40, 2, 179, 8),
-          3: Color.fromARGB(60, 2, 179, 8),
-          4: Color.fromARGB(80, 2, 179, 8),
-          5: Color.fromARGB(100, 2, 179, 8),
-          6: Color.fromARGB(120, 2, 179, 8),
-          7: Color.fromARGB(150, 2, 179, 8),
-          8: Color.fromARGB(180, 2, 179, 8),
-          9: Color.fromARGB(220, 2, 179, 8),
-          10: Color.fromARGB(255, 2, 179, 8),
+          1: Color.fromRGBO(2, 179, 8, 0.1),
+          2: Color.fromRGBO(2, 179, 8, 0.2),
+          3: Color.fromRGBO(2, 179, 8, 0.3),
+          4: Color.fromRGBO(2, 179, 8, 0.4),
+          5: Color.fromRGBO(2, 179, 8, 0.5),
+          6: Color.fromRGBO(2, 179, 8, 0.6),
+          7: Color.fromRGBO(2, 179, 8, 0.7),
+          8: Color.fromRGBO(2, 179, 8, 0.8),
+          9: Color.fromRGBO(2, 179, 8, 0.9),
+          10: Color.fromRGBO(2, 179, 8, 1.0),
         },
         onClick: (value) {
           ScaffoldMessenger.of(context)

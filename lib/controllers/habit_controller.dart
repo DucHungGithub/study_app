@@ -11,7 +11,9 @@ class HabitController extends GetxController {
   RxList<DateActivity> dateActivities =
       <DateActivity>[].obs; //late Map<DateTime, int>? _databases;
 
-  RxString startDate = ''.obs;
+  late RxString startDate = todaysDateFormatted().obs;
+  //final startDate = Rxn<String>();
+  //var startDate = Rxn<String>();
 
   @override
   void onReady() {
@@ -97,7 +99,7 @@ class HabitController extends GetxController {
 
   Map<DateTime, int> getDateActivitiesMap() {
     return dateActivities.fold<Map<DateTime, int>>({}, (map, dateActivity) {
-      final date = createDateTimeObject(dateActivity.date);
+      DateTime date = createDateTimeObject(dateActivity.date);
       map[date] = dateActivity.completed;
       return map;
     });
