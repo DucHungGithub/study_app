@@ -3,8 +3,7 @@ import 'package:get/get.dart';
 import 'package:study_app_project/configs/themes/app_colors.dart';
 import 'package:study_app_project/configs/themes/ui_parameters.dart';
 import 'package:study_app_project/controllers/zoom_drawer_controller.dart';
-import 'package:study_app_project/screen/video/register_page.dart';
-
+import 'package:study_app_project/screen/video/video_screen.dart';
 
 class MenuScreen extends GetView<MyZoomDrawerController> {
   const MenuScreen({super.key});
@@ -58,6 +57,12 @@ class MenuScreen extends GetView<MyZoomDrawerController> {
                       icon: Icons.videocam_rounded,
                       label: "Conference",
                       onPressed: () => Get.to(const RegisterScreen()),
+                    ),
+                    _DrawerButton(
+                      icon: Icons.facebook,
+                      label: "Activity",
+                      onPressed: () =>
+                          Get.toNamed(HabitTrackerScreen.routeName),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 25),

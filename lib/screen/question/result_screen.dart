@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:study_app_project/configs/themes/custom_text_styles.dart';
 import 'package:study_app_project/configs/themes/ui_parameters.dart';
+import 'package:study_app_project/controllers/habit_controller.dart';
 import 'package:study_app_project/controllers/question_page/questions_controller.dart';
 import 'package:study_app_project/controllers/question_page/questions_controller_extension.dart';
 import 'package:study_app_project/screen/question/answer_check_screen.dart';
@@ -20,6 +21,7 @@ class ResultScreen extends GetView<QuestionsController> {
 
   @override
   Widget build(BuildContext context) {
+    HabitController habitController = Get.find();
     Color textColor =
         Get.isDarkMode ? Colors.white : Theme.of(context).primaryColor;
     return Scaffold(
@@ -112,6 +114,7 @@ class ResultScreen extends GetView<QuestionsController> {
                               child: MainButton(
                                   onTap: () {
                                     controller.saveTestResults();
+                                    habitController.addHabit();
                                   },
                                   title: 'Go home'))
                         ],

@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:study_app_project/firebase_ref/references.dart';
+import 'package:study_app_project/models/datetime.dart';
 import 'package:study_app_project/screen/home/home_screen.dart';
 import 'package:study_app_project/screen/login/login_screen.dart';
 import 'package:study_app_project/services/firebase_storage_service.dart';
@@ -67,6 +68,10 @@ class AuthController extends GetxController {
       "email": account.email,
       "name": account.displayName,
       "profilepic": account.photoUrl
+    });
+
+    activityRF.doc(account.email).set({
+      'startDate': todaysDateFormatted(),
     });
   }
 
