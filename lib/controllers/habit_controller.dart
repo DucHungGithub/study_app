@@ -11,14 +11,14 @@ class HabitController extends GetxController {
   RxList<DateActivity> dateActivities =
       <DateActivity>[].obs; //late Map<DateTime, int>? _databases;
 
-  late RxString startDate = todaysDateFormatted().obs;
+  RxString startDate = ''.obs;
   //final startDate = Rxn<String>();
   //var startDate = Rxn<String>();
 
   @override
-  void onReady() {
-    _fetchData();
-    super.onReady();
+  void onInit() {
+    fetchData();
+    super.onInit();
   }
 
   // void initHabit() {
@@ -27,7 +27,7 @@ class HabitController extends GetxController {
   //   //loadDatabase(_user.email.toString());
   // }
 
-  void _fetchData() async {
+  Future<void> fetchData() async {
     final activityRef = activityRF.doc(_userMail);
     final activitySnapshot = await activityRef.get();
     if (activitySnapshot.exists) {

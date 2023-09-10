@@ -13,13 +13,23 @@ class HabitTrackerScreen extends GetView<HabitController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Habits'),
+        title: Text('Habits'),
       ),
-      body: Obx(() {
-        final dateActivitiesMap = controller.getDateActivitiesMap();
-        final startDate = createDateTimeObject(controller.startDate.value);
-        return TrackerMap(datasets: dateActivitiesMap, startDate: startDate);
-      }),
+      body: FutureBuilder(
+        future: controller.fetchData(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Text('Error: ${snapshot.error}');
+          } else {
+            final dateActivitiesMap = controller.getDateActivitiesMap();
+            final startDate = createDateTimeObject(controller.startDate.value);
+            return TrackerMap(
+                datasets: dateActivitiesMap, startDate: startDate);
+          }
+        },
+      ),
     );
   }
 }
