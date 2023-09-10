@@ -12,20 +12,12 @@ class HabitController extends GetxController {
       <DateActivity>[].obs; //late Map<DateTime, int>? _databases;
 
   RxString startDate = ''.obs;
-  //final startDate = Rxn<String>();
-  //var startDate = Rxn<String>();
 
   @override
   void onInit() {
     fetchData();
     super.onInit();
   }
-
-  // void initHabit() {
-  //   loadStartDate(_userMail);
-
-  //   //loadDatabase(_user.email.toString());
-  // }
 
   Future<void> fetchData() async {
     final activityRef = activityRF.doc(_userMail);
@@ -40,35 +32,7 @@ class HabitController extends GetxController {
     }
   }
 
-  // Future<void> loadStartDate(String email) async {
-  //   _startDate = await activityRF
-  //       .doc(email)
-  //       .get()
-  //       .then((value) => value.data()!['startDate']) as String;
-  // }
-
-  // Future<void> loadDatabase(String email) async {
-  //   // Get docs from collection reference
-  //   QuerySnapshot querySnapshot =
-  //       await activityRF.doc(_userMail).collection('DateActivity').get();
-
-  //   // Get data from docs and convert map to List
-  //   final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
-
-  //   print(allData);
-  // }
-
   Future<void> addHabit() async {
-    // await activityRF
-    //     .doc(_user.email.toString())
-    //     .collection('DateActivity')
-    //     .doc(todaysDateFormatted())
-    //     .set({
-    //       'date': todaysDateFormatted(),
-    //       'completed': 0,
-    //       'dummy_field': null,
-    // },);
-
     final activityRef = activityRF
         .doc(_userMail)
         .collection('DateActivity')
@@ -88,14 +52,6 @@ class HabitController extends GetxController {
       }
     });
   }
-
-  // String getStartDate() {
-  //   return _startDate!;
-  // }
-
-  // Map<DateTime, int> getDatabase() {
-  //   return _databases!;
-  // }
 
   Map<DateTime, int> getDateActivitiesMap() {
     return dateActivities.fold<Map<DateTime, int>>({}, (map, dateActivity) {
