@@ -20,12 +20,12 @@ class AppIntroductionScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(
-                Icons.star,
+                Icons.book_online_rounded,
                 size: 65,
               ),
               const SizedBox(height: 40),
               const Text(
-                "This is a study app. You can use it as you want. If you understand how it works you would be able to scale it. With this you will master firebase backend and flutter front end.",
+                "This is a learning app. You can practice by answering multiple-choice questions in a variety of fields. Click the arrow below to get started.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 18,

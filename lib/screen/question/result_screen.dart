@@ -39,7 +39,6 @@ class ResultScreen extends GetView<QuestionsController> {
                         'assets/images/bulb.svg',
                         width: 180,
                         height: 180,
-                        color: Colors.deepOrangeAccent,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20, bottom: 5),
