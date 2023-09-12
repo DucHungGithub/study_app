@@ -51,6 +51,14 @@ dependencies:
   firebase_app_check: ^0.1.5+2
   flutter_heatmap_calendar: ^1.0.5
   zego_uikit_prebuilt_video_conference: ^2.4.0
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
 
 dev_dependencies:
   flutter_test:
