@@ -6,7 +6,7 @@ class TrackerMap extends StatelessWidget {
   final Map<DateTime, int> datasets;
   final DateTime startDate;
 
-  TrackerMap({
+  const TrackerMap({
     super.key,
     required this.datasets,
     required this.startDate,
@@ -18,7 +18,7 @@ class TrackerMap extends StatelessWidget {
       padding: const EdgeInsets.only(top: 25, bottom: 25),
       child: HeatMap(
         startDate: startDate,
-        //endDate: DateTime.now().add(Duration(days: 30)),
+        endDate: DateTime.now().add(Duration(days: 30)),
         datasets: datasets,
         colorMode: ColorMode.color,
         textColor: Colors.black,
