@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:study_app_project/configs/themes/app_colors.dart';
 import 'package:study_app_project/configs/themes/ui_parameters.dart';
 import 'package:study_app_project/controllers/zoom_drawer_controller.dart';
+import 'package:study_app_project/screen/map/habit_tracker_screen.dart';
+import 'package:study_app_project/screen/video/register_page.dart';
 import 'package:study_app_project/screen/video/video_screen.dart';
 
 class MenuScreen extends GetView<MyZoomDrawerController> {
