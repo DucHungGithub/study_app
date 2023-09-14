@@ -6,7 +6,7 @@ class TrackerMap extends StatelessWidget {
   final Map<DateTime, int> datasets;
   final DateTime startDate;
 
-  TrackerMap({
+  const TrackerMap({
     super.key,
     required this.datasets,
     required this.startDate,
