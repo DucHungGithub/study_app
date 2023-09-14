@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
-import 'package:study_app_project/models/datetime.dart';
 
 class TrackerMap extends StatelessWidget {
   final Map<DateTime, int> datasets;
