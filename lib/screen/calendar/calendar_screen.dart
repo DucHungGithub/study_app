@@ -1,63 +1,108 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:study_app_project/configs/themes/app_colors.dart';
 import 'package:study_app_project/configs/themes/custom_text_styles.dart';
+import 'package:study_app_project/screen/calendar/calenderPickNote.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
+import 'package:get/get.dart';
+
+import '../../controllers/calenderController.dart';
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen({super.key});
+
   static const String routeName = "/calendarscreen";
 
   @override
-  State<CalendarScreen> createState() => _CalendarScreen();
+  State<CalendarScreen> createState() => _CalendarScreenState();
 }
 
-class _CalendarScreen extends State<CalendarScreen> {
-  CalendarView _calendarView = CalendarView.week; // default view
+class _CalendarScreenState extends State<CalendarScreen> {
+  var calendarView = CalendarView.month;
+
+  final controller = Get.find<TakeNoteController>();
+
+  void openAddNoteOverlay(DateTime dateNow) {
+    showModalBottomSheet(
+        useSafeArea: true,
+        isScrollControlled: true,
+        context: context,
+        builder: (ctx) => GetNote(
+              dateNow: dateNow,
+            ));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: customScaffoldColor(context),
-      appBar: AppBar(
-        title: const Text(
-          'My Calendar',
-          style: appBarTs
-        ),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {
-              setState(() {
-                _calendarView = CalendarView.day;
-              });
-            },
-            tooltip: 'Day View',
-            icon: SvgPicture.asset("assets/icons/calendar_view_day.svg"),
+      body: Column(
+        children: [
+          Container(
+            color: Theme.of(context).primaryColor,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  onPressed: () => Get.back(),
+                  tooltip: 'Month View',
+                  icon: const Icon(Icons.arrow_back, size: 38),
+                ),
+                const Text('My Calendar', style: appBarTs),
+              ],
+            ),
           ),
-          IconButton(
-            onPressed: () {
-              setState(() {
-                _calendarView = CalendarView.week;
-              });
-            },
-            tooltip: 'Week View',
-            icon: SvgPicture.asset("assets/icons/calendar_view_week.svg"),
-          ),
-          IconButton(
-            onPressed: () {
-              setState(() {
-                _calendarView = CalendarView.month;
-              });
-            },
-            tooltip: 'Month View',
-            icon: SvgPicture.asset("assets/icons/calendar_view_month.svg"),
+          Expanded(
+            child: Obx(() => SfCalendar(
+                  view: calendarView,
+                  dataSource: EventDataSource(controller.getAppointments()),
+                  monthViewSettings: const MonthViewSettings(
+                      appointmentDisplayMode:
+                          MonthAppointmentDisplayMode.appointment),
+                  onTap: (calendarTapDetails) {
+                    if (controller.check.containsKey(calendarTapDetails.date)) {
+                      final data = controller.check[calendarTapDetails.date]!;
+                      showDialog(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                                title: Text(
+                                  data.subject,
+                                  style: const TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                content: Text(
+                                  data.note,
+                                  style: detailText,
+                                ),
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          Navigator.pop(context);
+                                          openAddNoteOverlay(
+                                              calendarTapDetails.date!);
+                                        });
+                                      },
+                                      child: const Text("Change")),
+                                  TextButton(
+                                      onPressed: () => Navigator.pop(context),
+                                      child: const Text("Close"))
+                                ],
+                              ));
+                    } else {
+                      openAddNoteOverlay(calendarTapDetails.date!);
+                    }
+                  },
+                )),
           ),
         ],
       ),
-      body: SfCalendar(
-        key: ValueKey(_calendarView),
-        view: _calendarView,
-      ),
     );
+  }
+}
+
+class EventDataSource extends CalendarDataSource {
+  EventDataSource(List<Appointment> source) {
+    appointments = source;
   }
 }

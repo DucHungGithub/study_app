@@ -62,7 +62,7 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
                                 onTap: () {
                                   Get.toNamed(CalendarScreen.routeName);
                                 },
-                                child: SvgPicture.asset("assets/icons/calendar.svg", height: 30.0, width: 30.0)
+                                child: SvgPicture.asset("assets/icons/calendar.svg", height: 30.0, width: 30.0,color: onSurfaceTextColor,)
                               ),
                               const SizedBox(
                                 width: 10.0,

@@ -11,6 +11,8 @@ final questionPaperRF = fireStore.collection('questionPapers');
 
 final activityRF = fireStore.collection('activity');
 
+final takeNoteRF = fireStore.collection('note');
+
 DocumentReference questionRF({
   required String paperId,
   required String questionId,
