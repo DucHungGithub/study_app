@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:study_app_project/controllers/habit_controller.dart';
 import 'package:study_app_project/controllers/question_page/question_paper_controller.dart';
 import 'package:study_app_project/controllers/question_page/questions_controller.dart';
+import 'package:study_app_project/controllers/summary_controller.dart';
 import 'package:study_app_project/controllers/zoom_drawer_controller.dart';
 import 'package:study_app_project/screen/calendar/calendar_screen.dart';
 import 'package:study_app_project/controllers/calenderController.dart';
@@ -14,6 +15,7 @@ import 'package:study_app_project/screen/question/questions_screen.dart';
 import 'package:study_app_project/screen/question/result_screen.dart';
 import 'package:study_app_project/screen/question/test_overview_screen.dart';
 import 'package:study_app_project/screen/splash/splash_screen.dart';
+import 'package:study_app_project/screen/summary/summary_screen.dart';
 
 class AppRoutes {
   static List<GetPage> routes() => [
@@ -62,6 +64,15 @@ class AppRoutes {
           binding: BindingsBuilder(
             () {
               Get.put<HabitController>(HabitController());
+            },
+          ),
+        ),
+        GetPage(
+          name: SummaryScreen.routeName,
+          page: () => const SummaryScreen(),
+          binding: BindingsBuilder(
+            () {
+              Get.put<SummaryController>(SummaryController());
             },
           ),
         ),
