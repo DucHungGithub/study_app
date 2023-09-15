@@ -4,6 +4,7 @@ import 'package:study_app_project/controllers/question_page/question_paper_contr
 import 'package:study_app_project/controllers/question_page/questions_controller.dart';
 import 'package:study_app_project/controllers/summary_controller.dart';
 import 'package:study_app_project/controllers/zoom_drawer_controller.dart';
+import 'package:study_app_project/screen/calendar/calendar_screen.dart';
 import 'package:study_app_project/screen/home/home_screen.dart';
 import 'package:study_app_project/screen/introduction/introduction.dart';
 import 'package:study_app_project/screen/login/login_screen.dart';
@@ -73,6 +74,10 @@ class AppRoutes {
               Get.put<SummaryController>(SummaryController());
             },
           ),
+        ),
+        GetPage(
+          name: CalendarScreen.routeName,
+          page: () => const CalendarScreen(),
         ),
       ];
 }

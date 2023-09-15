@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
 import 'package:study_app_project/configs/themes/app_colors.dart';
@@ -7,10 +8,12 @@ import 'package:study_app_project/configs/themes/custom_text_styles.dart';
 import 'package:study_app_project/configs/themes/ui_parameters.dart';
 import 'package:study_app_project/controllers/question_page/question_paper_controller.dart';
 import 'package:study_app_project/controllers/zoom_drawer_controller.dart';
+import 'package:study_app_project/screen/calendar/calendar_screen.dart';
 import 'package:study_app_project/screen/home/menu_screen.dart';
 import 'package:study_app_project/screen/home/question_card.dart';
 import 'package:study_app_project/widgets/app_circle_button.dart';
 import 'package:study_app_project/widgets/content_area.dart';
+
 
 class HomeScreen extends GetView<MyZoomDrawerController> {
   const HomeScreen({super.key});
@@ -55,9 +58,14 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           child: Row(
                             children: [
-                              const Icon(
-                                AppIcons.peace,
-                                color: Colors.white,
+                              InkWell(
+                                onTap: () {
+                                  Get.toNamed(CalendarScreen.routeName);
+                                },
+                                child: SvgPicture.asset("assets/icons/calendar.svg", height: 30.0, width: 30.0)
+                              ),
+                              const SizedBox(
+                                width: 10.0,
                               ),
                               Text(
                                 "Hello ${controller.user.value != null ? controller.user.value!.displayName : "friend"}",
