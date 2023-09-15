@@ -12,8 +12,13 @@ class HabitTrackerScreen extends GetView<HabitController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
-        title: const Text('Habits'),
+        backgroundColor: Theme.of(context).primaryColor,
+        title: const Text(
+          'Habits',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       body: FutureBuilder(
         future: controller.fetchData(),

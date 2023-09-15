@@ -40,12 +40,12 @@ class _CalendarScreenState extends State<CalendarScreen> {
           Container(
             color: Theme.of(context).primaryColor,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
                   onPressed: () => Get.back(),
                   tooltip: 'Month View',
-                  icon: const Icon(Icons.arrow_back, size: 38),
+                  icon: const Icon(Icons.arrow_back, size: 20),
                 ),
                 const Text('My Calendar', style: appBarTs),
               ],
