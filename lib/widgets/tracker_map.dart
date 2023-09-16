@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
+import 'package:study_app_project/configs/themes/app_colors.dart';
 
 class TrackerMap extends StatelessWidget {
   final Map<DateTime, int> datasets;
@@ -18,14 +19,14 @@ class TrackerMap extends StatelessWidget {
         padding: const EdgeInsets.only(top: 25, bottom: 25),
         child: HeatMap(
           startDate: startDate,
-          endDate: DateTime.now().add(const Duration(days: 40)),
+          endDate: DateTime.now(),
           datasets: datasets,
           colorMode: ColorMode.opacity,
-          textColor: Colors.black,
+          textColor: onSurfaceTextColor,
           showColorTip: true,
           showText: false,
           scrollable: true,
-          size: 40,
+          size: 20,
           colorsets: const {
             1: Color.fromRGBO(2, 179, 8, 0.1),
             2: Color.fromRGBO(2, 179, 8, 0.2),
