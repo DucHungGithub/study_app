@@ -68,7 +68,7 @@ class MenuScreen extends GetView<MyZoomDrawerController> {
                           Get.toNamed(HabitTrackerScreen.routeName),
                     ),
                     _DrawerButton(
-                      icon: Icons.facebook,
+                      icon: Icons.summarize,
                       label: "Summary",
                       onPressed: () => Get.toNamed(SummaryScreen.routeName),
                     ),
