@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: Get.find<ThemeController>().lightTheme,
+        darkTheme: Get.find<ThemeController>().darkTheme,
         getPages: AppRoutes.routes(),
       ),
     );
