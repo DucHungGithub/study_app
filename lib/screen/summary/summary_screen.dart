@@ -65,7 +65,9 @@ class SummaryScreen extends GetView<SummaryController> {
                                   color: onSurfaceTextColor),
                             ),
                             trailing: Text(
-                              entry.value >= 0 ? '${entry.value}' : '--',
+                              entry.value >= 0
+                                  ? '${entry.value.toStringAsFixed(2)}'
+                                  : '--',
                               style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w700,

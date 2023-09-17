@@ -7,7 +7,6 @@ import 'package:study_app_project/screen/map/habit_tracker_screen.dart';
 import 'package:study_app_project/screen/summary/summary_screen.dart';
 import 'package:study_app_project/screen/video/register_page.dart';
 
-
 class MenuScreen extends GetView<MyZoomDrawerController> {
   const MenuScreen({super.key});
 
@@ -38,6 +37,7 @@ class MenuScreen extends GetView<MyZoomDrawerController> {
                   right: MediaQuery.of(context).size.width * 0.2,
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Obx(() => controller.user.value == null
                         ? const SizedBox()
@@ -53,7 +53,7 @@ class MenuScreen extends GetView<MyZoomDrawerController> {
                     ),
                     _DrawerButton(
                       icon: Icons.web,
-                      label: "website",
+                      label: "Website",
                       onPressed: () => controller.website(),
                     ),
                     _DrawerButton(
@@ -72,13 +72,10 @@ class MenuScreen extends GetView<MyZoomDrawerController> {
                       label: "Summary",
                       onPressed: () => Get.toNamed(SummaryScreen.routeName),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 25),
-                      child: _DrawerButton(
-                        icon: Icons.email,
-                        label: "email",
-                        onPressed: () => controller.email(),
-                      ),
+                    _DrawerButton(
+                      icon: Icons.email,
+                      label: "Email",
+                      onPressed: () => controller.email(),
                     ),
                     const Spacer(
                       flex: 4,
