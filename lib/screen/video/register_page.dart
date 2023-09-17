@@ -8,6 +8,9 @@ import 'package:study_app_project/screen/video/video_screen.dart';
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
+  static const String routeName = '/registerscreen';
+
+
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
@@ -55,7 +58,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: TextField(
                       controller: _userController,
                       style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.w600, height: 2),
+                          fontSize: 20, fontWeight: FontWeight.w600, height: 2,color: Colors.black),
                       decoration: const InputDecoration(
                         label: Text('ID:'),
                         labelStyle: TextStyle(
@@ -87,7 +90,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       width: 50,
                       child: const Text(
                         "Start",
-                        style: TextStyle(fontWeight: FontWeight.w800),
+                        style: TextStyle(fontWeight: FontWeight.w800,color:Colors.black),
                       ),
                     ),
                   ),

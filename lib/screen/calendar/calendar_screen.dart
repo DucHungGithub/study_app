@@ -52,48 +52,53 @@ class _CalendarScreenState extends State<CalendarScreen> {
             ),
           ),
           Expanded(
-            child: Obx(() => SfCalendar(
+            child: GetBuilder<TakeNoteController>(
+              id: 'calender_list',
+              builder: (controller) {
+                return Obx(() => SfCalendar(
                   view: calendarView,
                   dataSource: EventDataSource(controller.getAppointments()),
                   monthViewSettings: const MonthViewSettings(
                       appointmentDisplayMode:
-                          MonthAppointmentDisplayMode.appointment),
+                      MonthAppointmentDisplayMode.appointment),
                   onTap: (calendarTapDetails) {
                     if (controller.check.containsKey(calendarTapDetails.date)) {
                       final data = controller.check[calendarTapDetails.date]!;
                       showDialog(
                           context: context,
                           builder: (_) => AlertDialog(
-                                title: Text(
-                                  data.subject,
-                                  style: const TextStyle(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                content: Text(
-                                  data.note,
-                                  style: detailText,
-                                ),
-                                actions: [
-                                  TextButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          Navigator.pop(context);
-                                          openAddNoteOverlay(
-                                              calendarTapDetails.date!);
-                                        });
-                                      },
-                                      child: const Text("Change")),
-                                  TextButton(
-                                      onPressed: () => Navigator.pop(context),
-                                      child: const Text("Close"))
-                                ],
-                              ));
+                            title: Text(
+                              data.subject,
+                              style: const TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            content: Text(
+                              data.note,
+                              style: detailText,
+                            ),
+                            actions: [
+                              TextButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      Navigator.pop(context);
+                                      openAddNoteOverlay(
+                                          calendarTapDetails.date!);
+                                    });
+                                  },
+                                  child: const Text("Change")),
+                              TextButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  child: const Text("Close"))
+                            ],
+                          ));
                     } else {
                       openAddNoteOverlay(calendarTapDetails.date!);
                     }
                   },
-                )),
+                ));
+              },
+            )
           ),
         ],
       ),

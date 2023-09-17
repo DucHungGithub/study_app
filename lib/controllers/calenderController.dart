@@ -73,6 +73,10 @@ class TakeNoteController extends GetxController {
         date: convertDateTimeToString(date),
         note: noteWrite,
         subject: subject));
+
+    check = getDateNoteMap();
+
+    update(['calender_list']);
   }
 
   List<Appointment> getAppointments() {

@@ -16,6 +16,7 @@ import 'package:study_app_project/screen/question/result_screen.dart';
 import 'package:study_app_project/screen/question/test_overview_screen.dart';
 import 'package:study_app_project/screen/splash/splash_screen.dart';
 import 'package:study_app_project/screen/summary/summary_screen.dart';
+import 'package:study_app_project/screen/video/register_page.dart';
 
 class AppRoutes {
   static List<GetPage> routes() => [
@@ -59,6 +60,10 @@ class AppRoutes {
           page: () => const AnswerCheckScreen(),
         ),
         GetPage(
+          name: RegisterScreen.routeName,
+          page: () => const RegisterScreen(),
+        ),
+        GetPage(
           name: HabitTrackerScreen.routeName,
           page: () => const HabitTrackerScreen(),
           binding: BindingsBuilder(
@@ -80,7 +85,7 @@ class AppRoutes {
           name: CalendarScreen.routeName,
           page: () => const CalendarScreen(),
           binding: BindingsBuilder(
-                () {
+            () {
               Get.put<TakeNoteController>(TakeNoteController());
             },
           ),

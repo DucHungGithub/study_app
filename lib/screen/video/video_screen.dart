@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:study_app_project/configs/themes/app_light_theme.dart';
-import 'package:study_app_project/controllers/theme_controller.dart';
 import 'package:zego_uikit_prebuilt_video_conference/zego_uikit_prebuilt_video_conference.dart';
 
 class VideoConferencePage extends StatelessWidget {
   final String conferenceID;
   final String userId;
   final String userName;
+
+  static const String routeName = '/videoscreen';
 
   const VideoConferencePage({
     Key? key,
