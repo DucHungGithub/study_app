@@ -43,7 +43,10 @@ class AuthController extends GetxController {
           accessToken: authAccount.accessToken,
         );
         await _auth.signInWithCredential(credential);
-        await saveUser(account);
+        final documentSnapshot = await userRF.doc(account.email).get();
+        if (!documentSnapshot.exists) {
+          await saveUser(account);
+        }
         Get.put(FirebaseStorageService());
         navigateToHomePage();
       }
